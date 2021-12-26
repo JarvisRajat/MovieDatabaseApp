@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetailsController" customModule="MovieDatabaseApp" customModuleProvider="target">
+            <connections>
+                <outlet property="castAndCrew" destination="eVQ-sd-9xv" id="abd-G6-Nhk"/>
+                <outlet property="contentView" destination="QGK-p6-3O8" id="ap9-YF-WzN"/>
+                <outlet property="movieGenre" destination="Ote-Lw-lwu" id="6Fp-I8-FlM"/>
+                <outlet property="moviePlot" destination="mN9-o2-s6V" id="yfJ-3q-biy"/>
+                <outlet property="moviePoster" destination="z8e-oc-nID" id="1dm-pX-GCi"/>
+                <outlet property="movieRatings" destination="mIS-LI-JUX" id="CVp-or-lPW"/>
+                <outlet property="movieReleaseDate" destination="yQ9-nK-Wn1" id="WBD-GS-ek2"/>
+                <outlet property="movieTitle" destination="irM-tt-iCr" id="3ET-sY-zOm"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nnP-MU-Xyd">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGK-p6-3O8">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="433"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z8e-oc-nID">
+                                    <rect key="frame" x="2" y="0.0" width="410" height="216.5"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irM-tt-iCr">
+                                    <rect key="frame" x="2" y="224.5" width="410" height="37.5"/>
+                                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Plot" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mN9-o2-s6V">
+                                    <rect key="frame" x="2" y="270" width="410" height="26"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cast &amp; Crew" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVQ-sd-9xv">
+                                    <rect key="frame" x="2" y="304" width="410" height="23.5"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                    <color key="textColor" systemColor="systemGrayColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ote-Lw-lwu">
+                                    <rect key="frame" x="2" y="364.5" width="410" height="21"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ratings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIS-LI-JUX">
+                                    <rect key="frame" x="2" y="401.5" width="410" height="23.5"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                    <color key="textColor" systemColor="linkColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release Date" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQ9-nK-Wn1">
+                                    <rect key="frame" x="2" y="335.5" width="410" height="21"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="mIS-LI-JUX" firstAttribute="trailing" secondItem="Ote-Lw-lwu" secondAttribute="trailing" id="3qi-Dt-hKu"/>
+                                <constraint firstItem="mN9-o2-s6V" firstAttribute="trailing" secondItem="irM-tt-iCr" secondAttribute="trailing" id="5F0-Zd-Xx1"/>
+                                <constraint firstItem="irM-tt-iCr" firstAttribute="trailing" secondItem="z8e-oc-nID" secondAttribute="trailing" id="EwW-9X-qRy"/>
+                                <constraint firstItem="Ote-Lw-lwu" firstAttribute="trailing" secondItem="yQ9-nK-Wn1" secondAttribute="trailing" id="IdB-Xs-ScA"/>
+                                <constraint firstItem="yQ9-nK-Wn1" firstAttribute="top" secondItem="eVQ-sd-9xv" secondAttribute="bottom" constant="8" id="K4G-hx-3YX"/>
+                                <constraint firstItem="irM-tt-iCr" firstAttribute="leading" secondItem="z8e-oc-nID" secondAttribute="leading" id="KTq-5r-lKQ"/>
+                                <constraint firstAttribute="trailing" secondItem="z8e-oc-nID" secondAttribute="trailing" constant="2" id="L9O-wQ-BuF"/>
+                                <constraint firstItem="mN9-o2-s6V" firstAttribute="top" secondItem="irM-tt-iCr" secondAttribute="bottom" constant="8" id="QDx-qE-O7F"/>
+                                <constraint firstItem="eVQ-sd-9xv" firstAttribute="top" secondItem="mN9-o2-s6V" secondAttribute="bottom" constant="8" id="T8V-Bt-Yla"/>
+                                <constraint firstItem="irM-tt-iCr" firstAttribute="top" secondItem="z8e-oc-nID" secondAttribute="bottom" constant="8" id="dae-W9-Vgn"/>
+                                <constraint firstAttribute="bottom" secondItem="mIS-LI-JUX" secondAttribute="bottom" constant="8" id="ey5-fe-lTO"/>
+                                <constraint firstItem="z8e-oc-nID" firstAttribute="height" secondItem="QGK-p6-3O8" secondAttribute="height" multiplier="0.5" id="gxL-E2-8Lz"/>
+                                <constraint firstItem="eVQ-sd-9xv" firstAttribute="trailing" secondItem="mN9-o2-s6V" secondAttribute="trailing" id="hJS-E8-Mrj"/>
+                                <constraint firstItem="eVQ-sd-9xv" firstAttribute="leading" secondItem="mN9-o2-s6V" secondAttribute="leading" id="iuq-8t-aYL"/>
+                                <constraint firstItem="mN9-o2-s6V" firstAttribute="leading" secondItem="irM-tt-iCr" secondAttribute="leading" id="jSq-zw-nmn"/>
+                                <constraint firstItem="yQ9-nK-Wn1" firstAttribute="trailing" secondItem="eVQ-sd-9xv" secondAttribute="trailing" id="kdX-cU-Jw5"/>
+                                <constraint firstItem="z8e-oc-nID" firstAttribute="leading" secondItem="QGK-p6-3O8" secondAttribute="leading" constant="2" id="l2O-zV-e1C"/>
+                                <constraint firstItem="z8e-oc-nID" firstAttribute="top" secondItem="QGK-p6-3O8" secondAttribute="top" id="qFH-Tz-MGU"/>
+                                <constraint firstItem="Ote-Lw-lwu" firstAttribute="top" secondItem="yQ9-nK-Wn1" secondAttribute="bottom" constant="8" id="rs0-cJ-i1s"/>
+                                <constraint firstItem="yQ9-nK-Wn1" firstAttribute="leading" secondItem="eVQ-sd-9xv" secondAttribute="leading" id="s2I-iQ-DK1"/>
+                                <constraint firstItem="Ote-Lw-lwu" firstAttribute="leading" secondItem="yQ9-nK-Wn1" secondAttribute="leading" id="tov-v4-xYw"/>
+                                <constraint firstItem="mIS-LI-JUX" firstAttribute="top" secondItem="Ote-Lw-lwu" secondAttribute="bottom" constant="16" id="x4x-Xx-0v1"/>
+                                <constraint firstItem="mIS-LI-JUX" firstAttribute="leading" secondItem="Ote-Lw-lwu" secondAttribute="leading" id="yKB-7G-TgU"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="QGK-p6-3O8" secondAttribute="trailing" id="7OK-IR-h6p"/>
+                        <constraint firstItem="QGK-p6-3O8" firstAttribute="top" secondItem="nnP-MU-Xyd" secondAttribute="top" id="JaQ-6I-CYY"/>
+                        <constraint firstItem="QGK-p6-3O8" firstAttribute="width" secondItem="nnP-MU-Xyd" secondAttribute="width" id="Nnb-kC-lZC"/>
+                        <constraint firstItem="QGK-p6-3O8" firstAttribute="leading" secondItem="nnP-MU-Xyd" secondAttribute="leading" id="Zt0-DO-qu1"/>
+                        <constraint firstAttribute="bottom" secondItem="QGK-p6-3O8" secondAttribute="bottom" id="jcH-3p-9TM"/>
+                        <constraint firstItem="QGK-p6-3O8" firstAttribute="bottom" secondItem="nnP-MU-Xyd" secondAttribute="bottom" id="q7c-ze-EIM"/>
+                        <constraint firstItem="QGK-p6-3O8" firstAttribute="bottom" secondItem="nnP-MU-Xyd" secondAttribute="bottom" id="xj8-JM-wEO"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="oku-ex-stk"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="unQ-qH-83N"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="nnP-MU-Xyd" secondAttribute="bottom" id="Vrc-kC-kO6"/>
+                <constraint firstItem="nnP-MU-Xyd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cdH-9b-fV1"/>
+                <constraint firstItem="nnP-MU-Xyd" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="dos-8z-wkC"/>
+                <constraint firstItem="nnP-MU-Xyd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kdw-SE-p1d"/>
+            </constraints>
+            <point key="canvasLocation" x="111.59420289855073" y="-62.276785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

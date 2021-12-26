@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieDetailsCell" id="KGk-i7-Jjw" customClass="MovieDetailsCell" customModule="MovieDatabaseApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="154"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="154"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W6D-ck-kTG">
+                        <rect key="frame" x="4" y="2" width="150" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="150" id="AUr-2s-PVg"/>
+                            <constraint firstAttribute="width" secondItem="W6D-ck-kTG" secondAttribute="height" multiplier="1:1" id="D3i-PG-Nk8"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Movie Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Mj-2W-zNB">
+                        <rect key="frame" x="158" y="2" width="158" height="21.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Language" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXW-7a-73W">
+                        <rect key="frame" x="158" y="27.5" width="158" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wa0-hG-5p1">
+                        <rect key="frame" x="158" y="48.5" width="158" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="W6D-ck-kTG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="J3a-GV-QLe"/>
+                    <constraint firstItem="wa0-hG-5p1" firstAttribute="leading" secondItem="FXW-7a-73W" secondAttribute="leading" id="R9C-17-89Z"/>
+                    <constraint firstItem="wa0-hG-5p1" firstAttribute="top" secondItem="FXW-7a-73W" secondAttribute="bottom" constant="4" id="ULr-AS-ek3"/>
+                    <constraint firstItem="W6D-ck-kTG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="Uhw-VF-xbA"/>
+                    <constraint firstAttribute="trailing" secondItem="2Mj-2W-zNB" secondAttribute="trailing" constant="4" id="YpT-9V-Fi3"/>
+                    <constraint firstItem="2Mj-2W-zNB" firstAttribute="leading" secondItem="W6D-ck-kTG" secondAttribute="trailing" constant="4" id="bVA-nB-2cJ"/>
+                    <constraint firstItem="2Mj-2W-zNB" firstAttribute="top" secondItem="W6D-ck-kTG" secondAttribute="top" id="del-Qr-lLt"/>
+                    <constraint firstItem="wa0-hG-5p1" firstAttribute="trailing" secondItem="FXW-7a-73W" secondAttribute="trailing" id="gj0-Iv-2zG"/>
+                    <constraint firstItem="FXW-7a-73W" firstAttribute="leading" secondItem="2Mj-2W-zNB" secondAttribute="leading" id="qzZ-Di-aAk"/>
+                    <constraint firstItem="FXW-7a-73W" firstAttribute="trailing" secondItem="2Mj-2W-zNB" secondAttribute="trailing" id="tkf-WF-Eko"/>
+                    <constraint firstAttribute="bottom" secondItem="W6D-ck-kTG" secondAttribute="bottom" constant="2" id="xBE-Rg-XQP"/>
+                    <constraint firstItem="FXW-7a-73W" firstAttribute="top" secondItem="2Mj-2W-zNB" secondAttribute="bottom" constant="4" id="yIf-GS-u0O"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="movieLanguage" destination="FXW-7a-73W" id="9gr-Op-YsT"/>
+                <outlet property="moviePoster" destination="W6D-ck-kTG" id="DHZ-vx-Qrf"/>
+                <outlet property="movieTitle" destination="2Mj-2W-zNB" id="ABL-uw-GOe"/>
+                <outlet property="releasedYear" destination="wa0-hG-5p1" id="r0f-yY-kf8"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="94.419642857142847"/>
+        </tableViewCell>
+    </objects>
+</document>
