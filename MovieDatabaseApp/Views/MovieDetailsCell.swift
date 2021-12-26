@@ -16,7 +16,6 @@ class MovieDetailsCell: BaseTableViewCell<MovieData> {
     @IBOutlet weak var releasedYear: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     override var datasource: MovieData! {
             didSet {
@@ -28,15 +27,7 @@ class MovieDetailsCell: BaseTableViewCell<MovieData> {
         movieTitle.text = datasource.title
         movieLanguage.text = datasource.language
         if let imageUrl = datasource.poster, !imageUrl.isEmpty {
-            moviePoster.loadImage(from: imageUrl) { [weak self] (image) in
-                DispatchQueue.main.async {
-                    if let downloadedImage = image {
-                        self?.moviePoster.image = downloadedImage
-                    } else {
-                        self?.moviePoster.backgroundColor = UIColor.lightGray
-                    }
-                }
-            }
+            Constants.shared.loadImage(imageView: moviePoster, imageUrl: imageUrl)
         }
         moviePoster.makeRounded(true, .clear, true)
         releasedYear.text = datasource.year

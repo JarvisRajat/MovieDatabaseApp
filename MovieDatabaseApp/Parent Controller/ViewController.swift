@@ -14,13 +14,42 @@ class ViewController: UIViewController, UISearchResultsUpdating {
     let searchController = UISearchController(searchResultsController: MovieListViewController())
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    private func setupUI() {
+        cellRegister()
         searchController.searchResultsUpdater = self
         let placeholder = NSAttributedString(string: "Search Movies by title/actor/genre/director", attributes: [.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 16)!])
         searchController.searchBar.searchTextField.attributedPlaceholder = placeholder
         navigationItem.searchController = searchController
+        setupData()
+    }
+    private func cellRegister() {
+        tableView.register(UINib(nibName: "MovieHeaderCell", bundle: Bundle.main),
+                           forHeaderFooterViewReuseIdentifier: "MovieHeaderCell")
+        tableView.register(UINib(nibName: "SubDataTableCell", bundle: Bundle.main), forCellReuseIdentifier: "SubDataTableCell")
+    }
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {
+            return
+        }
+        let vc = searchController.searchResultsController as? MovieListViewController
+        vc?.movieListData = movieData.filter({value in
+            if let title = value.title?.lowercased(),
+               let genre = value.genre?.lowercased(),
+               let actors = value.actors?.lowercased(),
+               let director = value.director?.lowercased() {
+                return   (title.contains(text.lowercased()) || genre.contains(text.lowercased()) || actors.contains(text.lowercased())  || director.contains(text.lowercased()))
+            }
+            return false
+        })
+        vc?.calledFromPresentingController = true
+        vc?.movieListTableView.reloadData()
+    }
+    private func setupData() {
         for values in movieData {
             if let year = values.year?.components(separatedBy: ", "),
                let genre = values.genre?.components(separatedBy: ", "),
@@ -33,39 +62,15 @@ class ViewController: UIViewController, UISearchResultsUpdating {
             }
         }
         categoryData[Categories.year.rawValue] = categoryData[Categories.year.rawValue]?.removingDuplicates().filter { $0 != "N/A" }
-        categoryData[Categories.genre.rawValue] = categoryData[Categories.genre.rawValue]?.removingDuplicates().filter { $0 != "N/A" }
-        categoryData[Categories.directors.rawValue] = categoryData[Categories.directors.rawValue]?.removingDuplicates().filter { $0 != "N/A" }
-        categoryData[Categories.actors.rawValue] = categoryData[Categories.actors.rawValue]?.removingDuplicates().filter { $0 != "N/A" }
+        categoryData[Categories.genre.rawValue] = categoryData[Categories.genre.rawValue]?.removingDuplicates().filter { $0 != "N/A" }.sorted(by: {$0 < $1})
+        categoryData[Categories.directors.rawValue] = categoryData[Categories.directors.rawValue]?.removingDuplicates().filter { $0 != "N/A" }.sorted(by: {$0 < $1})
+        categoryData[Categories.actors.rawValue] = categoryData[Categories.actors.rawValue]?.removingDuplicates().filter { $0 != "N/A" }.sorted(by: {$0 < $1})
         categoryData[Categories.year.rawValue] = (categoryData[Categories.year.rawValue] ?? []).sorted(by: { (Int($0) ?? 0) < (Int($1) ?? 0) })
         movieSections = [CategoryDataModel(headerName: .year, subData: (categoryData[Categories.year.rawValue] ?? []), isExpandable: false),
                          CategoryDataModel(headerName: .genre, subData: (categoryData[Categories.genre.rawValue] ?? []), isExpandable: false),
                          CategoryDataModel(headerName: .directors,
                                            subData: (categoryData[Categories.directors.rawValue] ?? []), isExpandable: false),
                          CategoryDataModel(headerName: .actors, subData: (categoryData[Categories.actors.rawValue] ?? []), isExpandable: false)]
-        cellRegister()
-    }
-   
-    private func cellRegister() {
-        tableView.register(UINib(nibName: "MovieHeaderCell", bundle: Bundle.main),
-                           forHeaderFooterViewReuseIdentifier: "MovieHeaderCell")
-        tableView.register(UINib(nibName: "SubDataTableCell", bundle: Bundle.main), forCellReuseIdentifier: "SubDataTableCell")
-    }
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {
-            return
-        }
-       let vc = searchController.searchResultsController as? MovieListViewController
-        vc?.movieListData = movieData.filter({value in
-            if let title = value.title?.lowercased(),
-               let genre = value.genre?.lowercased(),
-               let actors = value.actors?.lowercased(),
-               let director = value.director?.lowercased() {
-                return   (title.contains(text.lowercased()) || genre.contains(text.lowercased()) || actors.contains(text.lowercased())  || director.contains(text.lowercased()))
-            }
-            return false
-        })
-        vc?.calledFromPresentingController = true
-        vc?.movieListTableView.reloadData()
     }
 }
 extension ViewController: UITableViewDelegate {

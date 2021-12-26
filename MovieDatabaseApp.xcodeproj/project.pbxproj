@@ -131,6 +131,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0413EC492778D0BC006EE54F /* Parent Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04D8EB3027770731009A4683 /* Main.storyboard */,
+				04D8EB2E27770731009A4683 /* ViewController.swift */,
+			);
+			path = "Parent Controller";
+			sourceTree = "<group>";
+		};
+		0413EC4A2778D0F9006EE54F /* Service Manager */ = {
+			isa = PBXGroup;
+			children = (
+				04D8EB5E27770C31009A4683 /* DataModal.swift */,
+				04D8EB6027771489009A4683 /* DataLoader.swift */,
+				04D8EB5C27770B7F009A4683 /* movies.json */,
+			);
+			path = "Service Manager";
+			sourceTree = "<group>";
+		};
 		04D8EB1E27770731009A4683 = {
 			isa = PBXGroup;
 			children = (
@@ -156,16 +175,13 @@
 		04D8EB2927770731009A4683 /* MovieDatabaseApp */ = {
 			isa = PBXGroup;
 			children = (
+				0413EC492778D0BC006EE54F /* Parent Controller */,
 				04D8EB722777942F009A4683 /* Navigation Controllers */,
 				04D8EB6727772061009A4683 /* Helper */,
 				04D8EB6227771831009A4683 /* Views */,
+				0413EC4A2778D0F9006EE54F /* Service Manager */,
 				04D8EB2A27770731009A4683 /* AppDelegate.swift */,
 				04D8EB2C27770731009A4683 /* SceneDelegate.swift */,
-				04D8EB2E27770731009A4683 /* ViewController.swift */,
-				04D8EB5E27770C31009A4683 /* DataModal.swift */,
-				04D8EB5C27770B7F009A4683 /* movies.json */,
-				04D8EB6027771489009A4683 /* DataLoader.swift */,
-				04D8EB3027770731009A4683 /* Main.storyboard */,
 				04D8EB3327770733009A4683 /* Assets.xcassets */,
 				04D8EB3527770733009A4683 /* LaunchScreen.storyboard */,
 				04D8EB3827770733009A4683 /* Info.plist */,

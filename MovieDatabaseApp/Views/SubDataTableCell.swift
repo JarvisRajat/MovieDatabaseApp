@@ -12,7 +12,6 @@ class SubDataTableCell: BaseTableViewCell<String> {
     @IBOutlet private weak var subDataLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     override var datasource: String! {
         didSet {

@@ -15,7 +15,6 @@ class MovieListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cellRegister()
-        // Do any additional setup after loading the view.
     }
     
     private func cellRegister() {

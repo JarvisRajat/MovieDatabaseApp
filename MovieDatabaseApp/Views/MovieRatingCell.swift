@@ -13,7 +13,6 @@ class MovieRatingCell: BaseTableViewCell<Ratings> {
     @IBOutlet private weak var ratingSource: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     override var datasource: Ratings! {
         didSet {

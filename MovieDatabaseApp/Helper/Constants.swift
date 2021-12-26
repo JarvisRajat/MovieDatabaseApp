@@ -26,6 +26,35 @@ class CategoryDataModel {
         self.isExpandable = isExpandable
     }
 }
+
+class Constants {
+    static let shared = Constants()
+    func loadImage(imageView: UIImageView, imageUrl: String) {
+        imageView.loadImage(from: imageUrl) { (image) in
+            DispatchQueue.main.async {
+                if let downloadedImage = image {
+                    imageView.image = downloadedImage
+                } else {
+                    imageView.backgroundColor = UIColor.lightGray
+                }
+            }
+        }
+    }
+    func textStylingForCastAndCrew(actors: String, director: String, writer: String) -> NSMutableAttributedString {
+        let mainString = "Actors: \(actors)\nDirector: \(director)\nWriter: \(writer)"
+        let actorTile = "Actors:"
+        let directorTile = "Director:"
+        let writerTile = "Writer:"
+        let actorRange = (mainString as NSString).range(of: actorTile)
+        let directorRange = (mainString as NSString).range(of: directorTile)
+        let writerRange = (mainString as NSString).range(of: writerTile)
+        let mutableAttributedString = NSMutableAttributedString.init(string: mainString)
+        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.systemPink, range: actorRange)
+        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.systemPink, range: directorRange)
+        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.systemPink, range: writerRange)
+        return mutableAttributedString
+    }
+}
 extension Array where Element: Hashable {
     func removingDuplicates() -> [Element] {
         var addedDict = [Element: Bool]()
